@@ -22,7 +22,7 @@ https://github.com/xhostcom/javascript-gradient-generator.git
 
 ## Demo
 
-http://abandoned-tree.surge.sh/
+http://abrasive-governor.surge.sh/
 
 ## FAQ
 
