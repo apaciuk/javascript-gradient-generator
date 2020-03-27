@@ -18,6 +18,8 @@ Paul Anthony McGowan
 
 ## Repo
 
+https://github.com/xhostcom/javascript-gradient-generator.git
+
 ## Demo
 
 ## FAQ
