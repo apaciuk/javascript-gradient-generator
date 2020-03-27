@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Gradient Color Generator</title>
+    <style>
+     #bodybg {
+         width:100%; height:100vh;
+         background: linear-gradient(to right, red, gold);
+     }
+     #centerdiv {
+         width: 100%;
+         position: absolute;
+         top:30%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align:center;
+     }
+     h1 {
+         font-size: 2.5rem;
+         font-weight:bold;
+         color: rgba(0,0,0,0.8);
+         text-transform:uppercase;
+         letter-spacing: .5em;
+     }
+     h2 {
+         font-size: 1.5rem;
+         color: rgba(0,0,0,0.8);
+         text-transform: uppercase;
+         letter-spacing: .5em;;
+     }
+     h3 {
+         font-size: 1.5rem;
+         color: rgba(0,0,0,0.8);
+         letter-spacing: .2em;
+         margin: auto;;
+     }
+   </style>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body id="bodybg">
+    <div id="centerdiv">
+ <h1>Acme Gradient Color Generator!</h1>
+<h2>Pick the Color Range</h2>
+<br />
+<br />
+<input type="color" name="" id="colorone" value="#657A99">
+<input type="color" name="" id="colortwo" value="#95C42B">
+<br /><br />
+<h3 id="showvalue"></h3>
+</div>
+<script>
+const colorone = document.getElementById('colorone');
+const colortwo = document.getElementById('colortwo');
+const bodybg = document.getElementById('bodybg');
+const showdata = document.getElementById('showvalue');
+showdata.addEventListener('click', copy);
+colorone.addEventListener('input', setbgColor);
+colortwo.addEventListener('input', setbgColor);
+function setbgColor () {
+    bodybg.style.background = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+    showdata.textContent = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+}
+function copy () {
+var range = document.createRange();
+range.selectNode(document.getElementById("showvalue"));
+window.getSelection().removeAllRanges(); // clear current selection
+window.getSelection().addRange(range); // to select text
+document.execCommand("copy");
+window.getSelection().removeAllRanges();// to deselect
+swal("Copied to Clipboard!", "Awesome New Gradient!", "success");
+}
+
+</script>
+</body>
+</html>
